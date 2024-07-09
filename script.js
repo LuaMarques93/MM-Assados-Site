@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         whatsappMessage += `Total: R$${total.toFixed(2)}`;
         let encodedMessage = encodeURIComponent(whatsappMessage);
-        let whatsappURL = `https://wa.me/5566999999999?text=${encodedMessage}`;
+        let whatsappURL = `https://wa.me/5566999043248?text=${encodedMessage}`;
         window.open(whatsappURL, '_blank');
     }
 });
