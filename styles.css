@@ -1,0 +1,261 @@
+/* Corpo e Background */
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px; /* Tamanho de fonte base */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+/* Header, Navegação e Footer */
+header, footer {
+    background: linear-gradient(45deg, #d9534f, #f7b731);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem; /* Ajuste o tamanho de fonte conforme necessário */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header .header-text h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header .header-text p {
+    margin: 5px 0 0;
+    font-size: 1.2rem;
+}
+
+nav {
+    background-color: #d9534f;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    padding: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem; /* Ajuste o tamanho de fonte conforme necessário */
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f7b731;
+}
+
+/* Botão do Carrinho */
+.cart-button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.cart-button-container .btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cart-button-container .btn:hover {
+    background-color: #e6a700;
+    transform: scale(1.05);
+}
+
+/* Layout das Seções */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+#menuSection {
+    flex: 2;
+}
+
+.side-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    font-size: 1rem; /* Ajuste o tamanho de fonte conforme necessário */
+}
+
+/* Itens do Menu e Botões */
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.menu-item:hover {
+    transform: scale(1.02);
+}
+
+.menu-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.menu-item-text h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.menu-item-text p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.menu-item-text span {
+    display: block;
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.add-to-cart {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1rem;
+    border: none;
+}
+
+.add-to-cart:hover {
+    background-color: #4cae4c;
+}
+
+/* Carrinho de Compras */
+#cart, #checkout-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    font-size: 1rem;
+}
+
+#cart-items, #cart-items-modal {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li, #cart-items-modal li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#cart-items li:last-child, #cart-items-modal li:last-child {
+    border-bottom: none;
+}
+
+#cart-summary, .total-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Estilização do Formulário de Checkout */
+#checkout-form {
+    background-color: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#checkout-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#checkout-form label {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#checkout-form input, #checkout-form select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#checkout-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1rem;
+}
+
+#checkout-form button:hover {
+    background-color: #bb3f3f;
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    section {
+        flex: 1 1 100%;
+    }
+}

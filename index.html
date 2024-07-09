@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frangos Assados - Sinop</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagens/logo.png" alt="Logo Frangos Assados">
+        </div>
+        <div class="header-text">
+            <h1>Frangos Assados do Jardim Paulista</h1>
+            <p>Os melhores frangos assados de Sinop!</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="about.html" target="_blank">Sobre Nós</a></li>
+            <li><a href="#menuSection">Nosso Menu</a></li>
+            <li><a href="contact.html" target="_blank">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Botão para abrir o Modal do Carrinho -->
+    <div class="cart-button-container">
+        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#cartModal">
+            Ver Carrinho
+        </button>
+    </div>
+
+    <div class="main-container">
+        <section id="menuSection">
+            <h2>Nosso Menu</h2>
+            <div class="menu-item" data-name="Frango Assado Tradicional" data-price="30.00">
+                <img src="imagens/1.jpeg" alt="Frango Assado Tradicional">
+                <div class="menu-item-text">
+                    <h3>Frango Assado Tradicional</h3>
+                    <p>Sabor clássico, temperado com ervas finas e assado lentamente.</p>
+                    <span>R$30,00</span>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Frango Assado Picante" data-price="35.00">
+                <img src="imagens/1.jpeg" alt="Frango Assado Picante">
+                <div class="menu-item-text">
+                    <h3>Frango Assado Picante</h3>
+                    <p>Para os amantes de um sabor mais intenso, temperado com pimenta especial.</p>
+                    <span>R$35,00</span>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Frango Assado com Ervas" data-price="32.00">
+                <img src="imagens/1.jpeg" alt="Frango Assado com Ervas">
+                <div class="menu-item-text">
+                    <h3>Frango Assado com Ervas</h3>
+                    <p>Temperado com uma combinação de ervas frescas e especiarias.</p>
+                    <span>R$32,00</span>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="side-container">
+            <section id="cart">
+                <h2>Seu Carrinho</h2>
+                <ul id="cart-items"></ul>
+                <div id="cart-summary">
+                    <p>Subtotal: R$<span id="subtotal">0.00</span></p>
+                    <p>Total: R$<span id="total">0.00</span></p>
+                </div>
+            </section>
+
+            <!-- Formulário de Checkout -->
+            <section id="checkout-form">
+                <h2>Informações para o Pedido</h2>
+                <form>
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <label for="address">Endereço:</label>
+                    <input type="text" id="address" name="address" required>
+                    <label for="payment-method">Forma de Pagamento:</label>
+                    <select id="payment-method">
+                        <option value="pix">Pix</option>
+                        <option value="credito">Cartão de Crédito</option>
+                        <option value="debito">Cartão de Débito</option>
+                    </select>
+                    <label for="additional-info">Informações adicionais:</label>
+                    <textarea id="additional-info" name="additional-info" rows="3"></textarea>
+                    <button type="button" class="btn btn-primary" onclick="checkout()">Finalizar Pedido</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Frangos Assados do Jardim Paulista. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Modal do Carrinho -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Seu Carrinho de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="cart-items-modal" class="list-group">
+                        <!-- Itens do carrinho serão adicionados aqui via JavaScript -->
+                    </ul>
+                    <div class="total-container mt-3">
+                        <strong>Subtotal:</strong> R$<span id="subtotal-modal">0.00</span><br>
+                        <strong>Total:</strong> R$<span id="total-modal">0.00</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuar Comprando</button>
+                    <button type="button" class="btn btn-primary" onclick="checkout()">Finalizar Pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
