@@ -1,7 +1,7 @@
 /* Corpo e Background */
 body {
-    font-family: 'Arial', sans-serif;
-    font-size: 14px; /* Tamanho de fonte base */
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px; /* Tamanho de fonte base */
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -13,8 +13,21 @@ body {
 }
 
 .logo img {
-    width: 150px;
+    width: 150px; /* Ajuste o tamanho conforme necessário */
     height: auto;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px; /* Largura máxima para o contêiner do cabeçalho */
+    margin: 0 auto; /* Centraliza o cabeçalho horizontalmente */
+}
+
+.header-content .header-text {
+    margin-left: 20px;
+    text-align: center;
 }
 
 /* Header, Navegação e Footer */
@@ -30,11 +43,13 @@ header, footer {
 header .header-text h1 {
     margin: 0;
     font-size: 2rem;
+    font-family: 'Playfair Display', serif;
 }
 
 header .header-text p {
     margin: 5px 0 0;
     font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
 }
 
 nav {
@@ -139,11 +154,13 @@ section {
 .menu-item-text h3 {
     margin: 0;
     font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
 }
 
 .menu-item-text p {
     margin: 5px 0;
     font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
 }
 
 .menu-item-text span {
@@ -213,6 +230,7 @@ section {
 #checkout-form h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
 }
 
 #checkout-form label {
@@ -222,7 +240,7 @@ section {
     font-weight: bold;
 }
 
-#checkout-form input, #checkout-form select {
+#checkout-form input, #checkout-form select, #checkout-form textarea {
     width: calc(100% - 22px);
     padding: 10px;
     margin-top: 5px;
