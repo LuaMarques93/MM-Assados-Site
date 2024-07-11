@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +28,8 @@
         <ul>
             <li><a href="about.html" target="_blank">Sobre Nós</a></li>
             <li><a href="#menuSection">Nosso Menu</a></li>
+            <li><a href="#acompanhamentosSection">Acompanhamentos</a></li>
+            <li><a href="#bebidasSection">Bebidas</a></li>
             <li><a href="contact.html" target="_blank">Contato</a></li>
         </ul>
     </nav>
@@ -34,43 +37,100 @@
     <div class="main-container">
         <section id="menuSection">
             <h2>Nosso Menu</h2>
-            <div class="menu-item" data-name="Frango Assado Tradicional" data-price="30.00">
-                <img src="imagens/1.jpeg" alt="Frango Assado Tradicional">
-                <div class="menu-item-text">
-                    <h3>Frango Assado Tradicional</h3>
-                    <p>Sabor clássico, temperado com ervas finas e assado lentamente.</p>
-                    <span>R$30,00</span>
-                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+            <div class="menu-container">
+                <div class="menu-item" data-name="Frango Assado Tradicional" data-price="30.00">
+                    <img src="imagens/1.jpeg" alt="Frango Assado Tradicional">
+                    <div class="menu-item-text">
+                        <h3>Frango Assado Tradicional</h3>
+                        <p>Sabor clássico, temperado com ervas finas e assado lentamente.</p>
+                        <span>R$30,00</span>
+                        <button class="add-to-cart btn btn-primary">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-name="Frango Assado Picante" data-price="35.00">
+                    <img src="imagens/1.jpeg" alt="Frango Assado Picante">
+                    <div class="menu-item-text">
+                        <h3>Frango Assado Picante</h3>
+                        <p>Para os amantes de um sabor mais intenso, temperado com pimenta especial.</p>
+                        <span>R$35,00</span>
+                        <button class="add-to-cart btn btn-primary">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-name="Frango Assado com Ervas" data-price="32.00">
+                    <img src="imagens/1.jpeg" alt="Frango Assado com Ervas">
+                    <div class="menu-item-text">
+                        <h3>Frango Assado com Ervas</h3>
+                        <p>Temperado com uma combinação de ervas frescas e especiarias.</p>
+                        <span>R$32,00</span>
+                        <button class="add-to-cart btn btn-primary">Adicionar ao Carrinho</button>
+                    </div>
                 </div>
             </div>
-            <div class="menu-item" data-name="Frango Assado Picante" data-price="35.00">
-                <img src="imagens/1.jpeg" alt="Frango Assado Picante">
-                <div class="menu-item-text">
-                    <h3>Frango Assado Picante</h3>
-                    <p>Para os amantes de um sabor mais intenso, temperado com pimenta especial.</p>
-                    <span>R$35,00</span>
-                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+        </section>
+
+        <section id="acompanhamentosSection">
+            <h2>Acompanhamentos</h2>
+            <div class="menu-container">
+                <div class="menu-item" data-name="Arroz" data-price="10.00">
+                    <img src="imagens/Arroz.jpg" alt="Arroz">
+                    <div class="menu-item-text">
+                        <h3>Arroz</h3>
+                        <p>Arroz branco soltinho.</p>
+                        <span>R$10,00</span>
+                        <button class="add-to-cart btn btn-primary">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-name="Farofa" data-price="12.00">
+                    <img src="imagens/Farofa.jpg" alt="Farofa">
+                    <div class="menu-item-text">
+                        <h3>Farofa</h3>
+                        <p>Farofa crocante com bacon e cebola.</p>
+                        <span>R$12,00</span>
+                        <button class="add-to-cart btn btn-primary">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-name="Maionese" data-price="15.00">
+                    <img src="imagens/Maionese.jpg" alt="Maionese">
+                    <div class="menu-item-text">
+                        <h3>Maionese</h3>
+                        <p>Maionese de batata com cenoura e ervilha.</p>
+                        <span>R$15,00</span>
+                        <button class="add-to-cart btn btn-primary">Adicionar ao Carrinho</button>
+                    </div>
                 </div>
             </div>
-            <div class="menu-item" data-name="Frango Assado com Ervas" data-price="32.00">
-                <img src="imagens/1.jpeg" alt="Frango Assado com Ervas">
-                <div class="menu-item-text">
-                    <h3>Frango Assado com Ervas</h3>
-                    <p>Temperado com uma combinação de ervas frescas e especiarias.</p>
-                    <span>R$32,00</span>
-                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+        </section>
+
+        <section id="bebidasSection">
+            <h2>Bebidas</h2>
+            <div class="menu-container">
+                <div class="menu-item" data-name="Coca Cola" data-price="5.00">
+                    <img src="imagens/coca1.5.jpg" alt="Coca Cola">
+                    <div class="menu-item-text">
+                        <h3>Coca Cola</h3>
+                        <p>Refrigerante de cola.</p>
+                        <span>R$5,00</span>
+                        <button class="add-to-cart btn btn-primary">Adicionar ao Carrinho</button>
+                    </div>
                 </div>
-                
-            </div>
-            <div class="menu-item" data-name="Frango Assado com Ervas" data-price="32.00">
-                <img src="imagens/1.jpeg" alt="Frango Assado com Ervas">
-                <div class="menu-item-text">
-                    <h3>Frango Assado com Ervas</h3>
-                    <p>Temperado com uma combinação de ervas frescas e especiarias.</p>
-                    <span>R$32,00</span>
-                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                <div class="menu-item" data-name="Guaraná" data-price="5.00">
+                    <img src="imagens/guarana1.5.jpg" alt="Guaraná">
+                    <div class="menu-item-text">
+                        <h3>Guaraná</h3>
+                        <p>Refrigerante de guaraná.</p>
+                        <span>R$5,00</span>
+                        <button class="add-to-cart btn btn-primary">Adicionar ao Carrinho</button>
+                    </div>
                 </div>
-                
+                <div class="menu-item" data-name="Água" data-price="3.00">
+                    <img src="imagens/agua500ml.jpg" alt="Água">
+                    <div class="menu-item-text">
+                        <h3>Água</h3>
+                        <p>Água mineral.</p>
+                        <span>R$3,00</span>
+                        <button class="add-to-cart btn btn-primary">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -89,20 +149,20 @@
                 <h2>Informações de entrega e Pagamento</h2>
                 <form>
                     <label for="name">Nome:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" required class="form-control">
                     <label for="phone">Telefone:</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <input type="tel" id="phone" name="phone" required class="form-control">
                     <label for="address">Endereço:</label>
-                    <input type="text" id="address" name="address" required>
+                    <input type="text" id="address" name="address" required class="form-control">
                     <label for="payment-method">Forma de Pagamento:</label>
-                    <select id="payment-method">
+                    <select id="payment-method" class="form-select">
                         <option value="pix">Pix</option>
                         <option value="credito">Cartão de Crédito</option>
                         <option value="debito">Cartão de Débito</option>
                     </select>
                     <label for="additional-info">Informações adicionais:</label>
-                    <textarea id="additional-info" name="additional-info" rows="3"></textarea>
-                    <button type="button" class="btn btn-primary" onclick="checkout()">Finalizar Pedido</button>
+                    <textarea id="additional-info" name="additional-info" rows="3" class="form-control"></textarea>
+                    <button type="button" class="btn btn-primary mt-3" onclick="checkout()">Finalizar Pedido</button>
                 </form>
             </section>
         </div>
@@ -111,6 +171,9 @@
     <footer>
         <p>&copy; 2024 MM Assados - Sinop/MT. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button class="back-to-top" onclick="scrollToTop()">Voltar ao Topo</button>
 
     <!-- Modal do Carrinho -->
     <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
@@ -138,5 +201,11 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
+
 </html>

@@ -1,80 +1,63 @@
-document.addEventListener('DOMContentLoaded', function() {
-    let cart = [];
+let cart = [];
 
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-        button.addEventListener('click', function() {
-            let menuItem = this.closest('.menu-item');
-            let itemName = menuItem.getAttribute('data-name');
-            let itemPrice = parseFloat(menuItem.getAttribute('data-price'));
+function addToCart(name, price) {
+    const item = { name, price: parseFloat(price) };
+    cart.push(item);
+    renderCart();
+}
 
-            let cartItem = cart.find(item => item.name === itemName);
-            if (cartItem) {
-                cartItem.quantity++;
-            } else {
-                cart.push({ name: itemName, price: itemPrice, quantity: 1 });
-            }
-            updateCart();
-        });
+function renderCart() {
+    const cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = '';
+    let subtotal = 0;
+
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - R$${item.price.toFixed(2)}`;
+        cartItems.appendChild(li);
+        subtotal += item.price;
     });
 
-    function updateCart() {
-        let cartItemsContainer = document.getElementById('cart-items');
-        let cartItemsModalContainer = document.getElementById('cart-items-modal');
-        cartItemsContainer.innerHTML = '';
-        cartItemsModalContainer.innerHTML = '';
+    const subtotalElement = document.getElementById('subtotal');
+    subtotalElement.textContent = subtotal.toFixed(2);
 
-        let subtotal = 0;
-        cart.forEach(item => {
-            let li = document.createElement('li');
-            li.className = 'list-group-item d-flex justify-content-between align-items-center';
-            li.textContent = `${item.quantity}x ${item.name} - R$${(item.quantity * item.price).toFixed(2)}`;
-            let removeButton = document.createElement('button');
-            removeButton.textContent = 'Remover';
-            removeButton.className = 'btn btn-danger btn-sm';
-            removeButton.addEventListener('click', function() {
-                removeFromCart(item.name);
-            });
-            li.appendChild(removeButton);
+    const totalElement = document.getElementById('total');
+    totalElement.textContent = (subtotal * 1.1).toFixed(2); // Assuming 10% tax or additional charges
+}
 
-            let liModal = li.cloneNode(true);
-            cartItemsContainer.appendChild(li);
-            cartItemsModalContainer.appendChild(liModal);
+function checkout() {
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+    const paymentMethod = document.getElementById('payment-method').value;
+    const additionalInfo = document.getElementById('additional-info').value;
 
-            subtotal += item.quantity * item.price;
-        });
+    let message = `Olá, gostaria de fazer um pedido:\n\n`;
 
-        document.getElementById('subtotal').textContent = subtotal.toFixed(2);
-        document.getElementById('total').textContent = subtotal.toFixed(2);
-        document.getElementById('subtotal-modal').textContent = subtotal.toFixed(2);
-        document.getElementById('total-modal').textContent = subtotal.toFixed(2);
-    }
+    cart.forEach(item => {
+        message += `${item.name} - R$${item.price.toFixed(2)}\n`;
+    });
 
-    function removeFromCart(itemName) {
-        cart = cart.filter(item => item.name !== itemName);
-        updateCart();
-    }
+    const subtotal = cart.reduce((total, item) => total + item.price, 0);
+    const total = (subtotal * 1.0).toFixed(2); // Assuming 10% tax or additional charges
 
-    window.checkout = function() {
-        let name = document.getElementById('name').value;
-        let phone = document.getElementById('phone').value;
-        let address = document.getElementById('address').value;
-        let paymentMethod = document.getElementById('payment-method').value;
+    message += `\nSubtotal: R$${subtotal.toFixed(2)}`;
+    message += `\nTotal: R$${total}`;
+    message += `\n\nNome: ${name}`;
+    message += `\nTelefone: ${phone}`;
+    message += `\nEndereço: ${address}`;
+    message += `\nForma de Pagamento: ${paymentMethod}`;
+    message += `\nInformações adicionais: ${additionalInfo}`;
 
-        if (!name || !phone || !address) {
-            alert('Por favor, preencha todos os campos de contato e endereço.');
-            return;
-        }
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=+5566999043248&text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+}
 
-        let whatsappMessage = `Nome: ${name}\nTelefone: ${phone}\nEndereço: ${address}\nForma de Pagamento: ${paymentMethod}\nPedido:\n`;
-        let total = 0;
-        cart.forEach(item => {
-            total += item.quantity * item.price;
-            whatsappMessage += `${item.quantity}x ${item.name} - R$${(item.quantity * item.price).toFixed(2)}\n`;
-        });
-
-        whatsappMessage += `Total: R$${total.toFixed(2)}`;
-        let encodedMessage = encodeURIComponent(whatsappMessage);
-        let whatsappURL = `https://wa.me/5566999043248?text=${encodedMessage}`;
-        window.open(whatsappURL, '_blank');
-    }
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+        const menuItem = button.closest('.menu-item');
+        const name = menuItem.getAttribute('data-name');
+        const price = menuItem.getAttribute('data-price');
+        addToCart(name, price);
+    });
 });
