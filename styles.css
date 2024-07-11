@@ -84,16 +84,16 @@ nav ul li a:hover {
     background-color: #fff3e0;
     border-radius: 5px;
     margin: 0.8rem; /* Ajuste o espaçamento entre os itens */
-    padding: 0.6rem; /* Reduza o padding */
+    padding: 0.8rem; /* Reduza o padding */
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: calc(25% - 1rem); /* Ajuste a largura para diminuir o tamanho dos itens */
+    width: calc(30% - 1rem); /* Ajuste a largura para diminuir o tamanho dos itens */
     display: flex;
     align-items: center;
 }
 
 .menu-item img {
-    width: 100px; /* Reduza a largura da imagem */
-    height: 130px; /* Reduza a altura da imagem */
+    width: 140px; /* Reduza a largura da imagem */
+    height: auto; /* Reduza a altura da imagem */
     border-radius: 5px;
     object-fit: cover;
     margin-right: 1rem; /* Espaçamento entre a imagem e o texto */
