@@ -83,32 +83,34 @@ nav ul li a:hover {
 .menu-item {
     background-color: #fff3e0;
     border-radius: 5px;
-    margin: 1rem;
-    padding: 1rem;
+    margin: 0.5rem; /* Ajuste o espaçamento entre os itens */
+    padding: 0.5rem; /* Reduza o padding */
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: calc(30% - 2rem);
+    width: calc(25% - 1rem); /* Ajuste a largura para diminuir o tamanho dos itens */
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
 }
 
 .menu-item img {
-    width: 120px;
-    height: 160px;
+    width: 100px; /* Reduza a largura da imagem */
+    height: 130px; /* Reduza a altura da imagem */
     border-radius: 5px;
     object-fit: cover;
-    margin-bottom: 1rem;
+    margin-right: 1rem; /* Espaçamento entre a imagem e o texto */
+}
+
+.menu-item-text {
+    flex: 1;
 }
 
 .menu-item h3 {
     margin: 0.5rem 0;
-    font-size: 1rem; /* 16px */
+    font-size: 0.875rem; /* Reduza o tamanho da fonte */
 }
 
 .menu-item p {
     margin: 0.5rem 0;
-    font-size: 0.875rem; /* 14px */
+    font-size: 0.75rem; /* Reduza o tamanho da fonte */
 }
 
 .menu-item span {
@@ -124,6 +126,7 @@ nav ul li a:hover {
     border-radius: 5px;
     color: #5d4037;
     cursor: pointer;
+    font-size: 0.75rem; /* Reduza o tamanho da fonte */
 }
 
 .add-to-cart:hover {
@@ -184,6 +187,40 @@ footer {
     margin-left: 10px;
 }
 
+h2 {
+    text-align: center;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.remove-from-cart {
+    background-color: #ff5252;
+    border: none;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-from-cart:hover {
+    background-color: #ff1744;
+}
+
+.checkout-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
@@ -197,6 +234,13 @@ footer {
 
     .menu-item {
         width: 90%;
+        flex-direction: column; /* Alterar a direção do flex para coluna em telas menores */
+        text-align: center;
+    }
+
+    .menu-item img {
+        margin-right: 0;
+        margin-bottom: 1rem;
     }
 
     nav ul {
@@ -208,6 +252,15 @@ footer {
     }
 
     .menu-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #cart, #checkout-form {
+        width: 90%; /* Ajuste a largura conforme necessário */
+    }
+
+    .checkout-container {
         flex-direction: column;
         align-items: center;
     }
