@@ -71,7 +71,7 @@ function checkout() {
     }
     message += `\nInformações adicionais: ${additionalInfo}`;
 
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=+5566999043248&text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=5566999043248&text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 }
 
