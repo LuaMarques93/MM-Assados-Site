@@ -22,7 +22,7 @@ function renderCart() {
     subtotalElement.textContent = subtotal.toFixed(2);
 
     const totalElement = document.getElementById('total');
-    totalElement.textContent = (subtotal * 1.1).toFixed(2); // Assuming 10% tax or additional charges
+    totalElement.textContent = (subtotal * 1.0).toFixed(2); // Assuming 10% tax or additional charges
 }
 
 function checkout() {
