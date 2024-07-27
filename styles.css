@@ -1,19 +1,24 @@
+/* Importação de fontes */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
+/* Estilos Globais */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
-    color: #333;
-    font-size: 0.1rem; /* 14px */
+    background-color: #f5f5f5;
+    color: #555555;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
+/* Cabeçalho */
 header {
-    background-color: #ffe0b2;
-    color: #5d4037;
-    padding: 1rem 0;
+    background-color: #ffe5d9;
+    color: #333333;
+    padding: 1.5rem 0;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-content {
@@ -30,16 +35,21 @@ header {
 
 .header-text h1 {
     margin: 0;
-    font-size: 1.25rem; /* 20px */
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .header-text p {
-    margin: 0;
-    font-size: 1rem; /* 16px */
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    color: #777777;
 }
 
+/* Navegação */
 nav {
-    background-color: #ffccbc;
+    background-color: #ffd3b6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -55,91 +65,125 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #5d4037;
+    color: #333333;
     text-decoration: none;
     padding: 1rem;
     display: block;
-    font-size: 0.900rem; /* 14px */
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #ffab91;
+    background-color: #ffc4a3;
+    color: #ffffff;
 }
 
+/* Container Principal */
 .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: 2rem 1rem;
 }
 
-.menu-container {
+/* Estilos para Itens de Menu e Combo */
+.menu-container, .combo-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1.5rem;
     width: 100%;
 }
 
-.menu-item {
-    background-color: #fff3e0;
-    border-radius: 5px;
-    margin: 0.8rem; /* Ajuste o espaçamento entre os itens */
-    padding: 0.8rem; /* Reduza o padding */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: calc(30% - 1rem); /* Ajuste a largura para diminuir o tamanho dos itens */
+.menu-item, .combo-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
+    text-align: left;
+    flex: 1 1 calc(33.333% - 3rem);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.menu-item img {
-    width: 140px; /* Reduza a largura da imagem */
-    height: auto; /* Reduza a altura da imagem */
-    border-radius: 5px;
+.menu-item:hover, .combo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item img, .combo-item img {
+    width: 160px;
+    height: auto;
+    border-radius: 10px;
     object-fit: cover;
-    margin-right: 1rem; /* Espaçamento entre a imagem e o texto */
+    margin-right: 1.5rem;
 }
 
-.menu-item-text {
+.menu-item-text, .combo-item-text {
     flex: 1;
 }
 
-.menu-item h3 {
+.menu-item-text h3, .combo-item-text h3 {
     margin: 0.5rem 0;
-    font-size: 0.950rem; /* Reduza o tamanho da fonte */
+    font-size: 1.2rem;
+    color: #333333;
+    font-weight: 500;
 }
 
-.menu-item p {
+.menu-item-text p, .combo-item-text p {
     margin: 0.5rem 0;
-    font-size: 0.75rem; /* Reduza o tamanho da fonte */
+    font-size: 0.9rem;
+    color: #777777;
 }
 
-.menu-item span {
+.menu-item-text span, .combo-item-text span {
     font-weight: bold;
     margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #d9534f;
 }
 
 .add-to-cart {
     margin-top: 0.5rem;
-    background-color: #ffcc80;
+    background-color: #ffb999;
     border: none;
     padding: 0.5rem 1rem;
-    border-radius: 5px;
-    color: #5d4037;
+    border-radius: 8px;
+    color: #ffffff;
     cursor: pointer;
-    font-size: 0.75rem; /* Reduza o tamanho da fonte */
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
 }
 
 .add-to-cart:hover {
-    background-color: #ffb74d;
+    background-color: #ff8c69;
 }
 
-#cart, #checkout-form {
-    background-color: #fff3e0;
-    border-radius: 5px;
-    margin: 1rem;
-    padding: 1rem;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: calc(100% - 2rem);
+/* Carrinho e Formulário de Checkout */
+.checkout-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#cart {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    flex: 1;
+    max-width: 350px;
+}
+
+#cart h2 {
+    font-size: 1.5rem;
+    color: #333333;
+    border-bottom: 2px solid #ffb999;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 #cart ul {
@@ -148,79 +192,149 @@ nav ul li a:hover {
     margin: 0;
 }
 
-footer {
-    background-color: #ffe0b2;
-    color: #5d4037;
-    text-align: center;
-    padding: 1rem;
-    position: relative;
-    bottom: 0;
+#cart ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+#cart-summary {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* Formulário de Checkout */
+#checkout-form {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    flex: 2;
+    max-width: 600px;
+}
+
+#checkout-form h2 {
+    font-size: 1.5rem;
+    color: #333333;
+    border-bottom: 2px solid #ffb999;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#checkout-form label {
+    margin-top: 0.5rem;
+    color: #555555;
+    font-weight: 500;
+}
+
+#checkout-form input, #checkout-form select, #checkout-form textarea {
     width: 100%;
-    font-size: 0.875rem; /* 14px */
+    padding: 0.75rem;
+    margin-top: 0.3rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
 }
 
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #ffcc80;
-    color: #5d4037;
+#checkout-form button {
+    background-color: #ffb999;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    color: #ffffff;
     cursor: pointer;
-    font-size: 0.875rem; /* 14px */
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
-.back-to-top:hover {
-    background-color: #ffb74d;
+#checkout-form button:hover {
+    background-color: #ff8c69;
 }
 
 .payment-methods {
     display: flex;
     align-items: center;
     margin-top: 1rem;
+    gap: 10px;
 }
 
 .payment-methods img {
-    width: 50px;
-    margin-left: 10px;
+    width: 40px;
+    height: auto;
+    max-height: 30px;
 }
 
+/* Rodapé */
+footer {
+    background-color: #ffe5d9;
+    color: #555555;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.875rem;
+}
+
+/* Botão Voltar ao Topo */
+.back-to-top {
+    position: fixed;
+    bottom: 120px; /* Ajustado para ficar acima do botão de contato */
+    right: 20px;
+    background-color: #ffb999;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top:hover {
+    background-color: #ff8c69;
+}
+
+/* Contato via WhatsApp */
+.whatsapp-contact {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-contact:hover {
+    background-color: #20b358;
+}
+
+.whatsapp-contact .whatsapp-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+/* Títulos */
 h2 {
     text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    padding: 0;
+    color: #333333;
 }
 
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    padding: 0.5rem;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.remove-from-cart {
-    background-color: #ff5252;
-    border: none;
-    color: white;
-    padding: 0.3rem 0.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.remove-from-cart:hover {
-    background-color: #ff1744;
-}
-
-.checkout-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
+/* Media Queries para dispositivos móveis */
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
@@ -232,75 +346,179 @@ h2 {
         align-items: center;
     }
 
-    .menu-item {
-        width: 90%;
-        flex-direction: column; /* Alterar a direção do flex para coluna em telas menores */
+    .menu-container, .combo-container, .menu-item, .combo-item {
+        width: 100%;
+        flex-direction: column;
         text-align: center;
     }
 
-    .menu-item img {
+    .menu-item img, .combo-item img {
         margin-right: 0;
         margin-bottom: 1rem;
     }
 
     nav ul {
         flex-direction: column;
+        align-items: center;
     }
 
     nav ul li {
         margin: 0.5rem 0;
     }
 
-    .menu-container {
+    .checkout-container {
         flex-direction: column;
         align-items: center;
     }
 
     #cart, #checkout-form {
-        width: 90%; /* Ajuste a largura conforme necessário */
+        width: 100%;
+    }
+}
+
+/* Ajustes adicionais para dispositivos menores */
+@media (max-width: 480px) {
+    .header-text h1 {
+        font-size: 1.5rem;
     }
 
-    .checkout-container {
-        flex-direction: column;
-        align-items: center;
+    .header-text p {
+        font-size: 1rem;
+    }
+
+    .menu-item h3, .combo-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .menu-item p, .combo-item p {
+        font-size: 0.9rem;
+    }
+
+    .add-to-cart, .back-to-top, .whatsapp-contact {
+        font-size: 0.75rem;
+        padding: 0.5rem;
     }
 }
-.confirmation {
+
+/* Botão "Ir para o Carrinho" */
+.cart-button {
     position: fixed;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #4caf50;
-    color: white;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    z-index: 1000;
-    font-size: 1rem;
-}
-.whatsapp-contact {
-    position: fixed;
-    bottom: 60px; /* Ajuste conforme necessário para não sobrepor o botão "Voltar ao Topo" */
     right: 20px;
-    background-color: #25D366;
-    color: white;
+    background-color: #ffb999;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 0.875rem; /* 14px */
-    text-decoration: none;
+    font-size: 1rem;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-button:hover {
+    background-color: #ff8c69;
+}
+
+/* Estilos do Modal e outros componentes */
+.modal-header {
+    background-color: #ffe5d9; /* Cor de fundo pastel */
+    border-bottom: 1px solid #ffd3b6;
+    color: #333333;
+    padding: 1rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.modal-body {
+    padding: 1rem;
+    color: #555555;
+    line-height: 1.6;
+}
+
+.modal-footer {
+    background-color: #ffe5d9; /* Cor de fundo pastel */
+    border-top: 1px solid #ffd3b6;
+    padding: 1rem;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.whatsapp-contact:hover {
-    background-color: #20b358;
+.total-container {
+    font-weight: bold;
+    color: #d9534f;
+    margin-top: 1rem;
 }
 
-.whatsapp-contact .whatsapp-icon {
-    width: 10px; /* Ajuste conforme necessário */
-    height: 10px; /* Ajuste conforme necessário */
-    margin-right: 8px; /* Espaço entre a imagem e o texto */
+#cart-items-modal .list-group-item {
+    background-color: #ffffff;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
 }
 
+#cart-items-modal .list-group-item button.remove-from-cart {
+    background: none;
+    border: none;
+    color: #d9534f;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#cart-items-modal .list-group-item button.remove-from-cart:hover {
+    color: #c9302c;
+}
+
+/* Estilos para o Alerta de Adição ao Carrinho */
+.alert-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ffe5d9; /* Tom pastel suave */
+    border: 1px solid #ffb999;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.alert-message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: #333333;
+    font-size: 1rem;
+}
+
+.close-alert {
+    background: none;
+    border: none;
+    color: #d9534f;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+.close-alert:hover {
+    color: #c9302c;
+}
