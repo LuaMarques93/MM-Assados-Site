@@ -12,10 +12,10 @@
 </head>
 <body>
     <!-- Alerta de Adição ao Carrinho -->
-    <div id="alert-container" class="alert-container" style="display: none;">
+    <div id="alert-container" class="alert-container" style="display: none;" role="alert" aria-live="assertive">
         <div class="alert-message">
             <span id="alert-text"></span>
-            <button class="close-alert" onclick="closeAlert()">✕</button>
+            <button class="close-alert" onclick="closeAlert()" aria-label="Fechar Alerta">✕</button>
         </div>
     </div>
 
@@ -219,7 +219,7 @@
             <img src="imagens/whats.png" alt="WhatsApp" class="whatsapp-icon">
             Fale Conosco
         </button>
-        <button id="openCartModal" class="btn btn-primary cart-button">
+        <button id="openCartModal" class="btn btn-primary cart-button" tabindex="0">
             Ir para o Carrinho (<span id="cart-count">0</span>)
         </button>
     </div>
